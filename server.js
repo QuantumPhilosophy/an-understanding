@@ -1,3 +1,9 @@
+// Importing the DotEnv library from node_modules
+require('dotenv').config()
+
+// Importing keys.js
+const keys = require('./keys.js')
+
 // Importing the Express library from node_modules
 const express = require('express')
 
@@ -29,12 +35,12 @@ app.use(routes)
 
 // Connecting to the Mongo DB using Mongoose
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/googlebooks',
+  process.env.MONGODB_URI || `mongodb://${keys.mongo.user}:${keys.mongo.pass}@ds161062.mlab.com:61062/heroku_vgbvcjs1`,
   {
     useCreateIndex: true,
     useNewUrlParser: true
   }
-)
+).catch()
 
 // Where it all starts
 app.listen(PORT, () =>
