@@ -1,5 +1,8 @@
+// Importing the React package
 import React from 'react'
 
+// Declaring the Form functional component
+// This returns a Form component populated with other components and props
 function Form ({ q, handleInputChange, handleFormSubmit }) {
   return (
     <form>
@@ -31,4 +34,5 @@ function Form ({ q, handleInputChange, handleFormSubmit }) {
   )
 }
 
+// Exporting the Form component
 export default Form

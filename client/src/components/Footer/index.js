@@ -1,5 +1,8 @@
+// Importing the React package
 import React from 'react'
 
+// Declaring the Footer functional component
+// This returns a Footer component populated with other components and props
 function Footer () {
   return (
     <footer>
@@ -11,4 +14,5 @@ function Footer () {
   )
 }
 
+// Exporting the Footer component
 export default Footer

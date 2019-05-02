@@ -1,8 +1,17 @@
+// Importing the React package
 import React from 'react'
+
+// Importing components from the List folder and deconstructing them
 import { ListItem } from '../List'
+
+// Importing components from the Grid folder and deconstructing them
 import { Row, Col } from '../Grid'
+
+// Importing CSS
 import './style.css'
 
+// Declaring the ListItem functional component
+// This returns a ListItem component populated with other components and props
 function Book ({ title, subtitle, authors, link, description, image, Button }) {
   return (
     <ListItem>
@@ -37,4 +46,5 @@ function Book ({ title, subtitle, authors, link, description, image, Button }) {
   )
 }
 
+// Exporting the Book component
 export default Book

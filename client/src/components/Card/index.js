@@ -1,5 +1,8 @@
+// Importing the React package
 import React from 'react'
 
+// Declaring the Card functional component
+// This returns a Card component populated with other components and props
 function Card ({ icon, title, children }) {
   return (
     <div className='card mt-4'>
@@ -15,4 +18,5 @@ function Card ({ icon, title, children }) {
   )
 }
 
+// Exporting the Card component
 export default Card

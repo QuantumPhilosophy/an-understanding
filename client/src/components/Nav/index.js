@@ -1,13 +1,22 @@
+// Importing the React package and deconstructing the Component class
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
-import "./style.css";
 
+// Importing and deconstructing the Link function from the react-router-dom
+import { Link } from "react-router-dom";
+
+// Importing CSS
+import './style.css'
+
+// Declaring the Nav class component
 class Nav extends Component {
+  // Declaring the state for the Nav and child components
   state = {
     open: false,
     width: window.innerWidth
   };
 
+  // A function is monitoring the state of the window.innerWidth
+  // If statement causes the open state to false when the window.innerWidth is > 991
   updateWidth = () => {
     const newState = { width: window.innerWidth };
 
@@ -18,18 +27,24 @@ class Nav extends Component {
     this.setState(newState);
   };
 
+  // A function for toggling the collapsible menu
   toggleNav = () => {
     this.setState({ open: !this.state.open });
   };
 
+  // using the componentDidMount() function to invoke the addEventListener() function upon mounting of the Nav component
   componentDidMount() {
     window.addEventListener("resize", this.updateWidth);
   }
 
+  // using the componentWillUnmount() function to invoke the removeEventListener() function upon mounting of the Nav component
   componentWillUnmount() {
     window.removeEventListener("resize", this.updateWidth);
   }
 
+  // Using ReactDOM.render to render the Nav component
+  // This returns the Nav populated with other components and props
+  // The Div contains the collapsible menu
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light bg-light mb-2">
@@ -74,4 +89,5 @@ class Nav extends Component {
   }
 }
 
+// Exporting the Nav component
 export default Nav;
